@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <style>
+        div{
+            width: 100px;
+            height: 200px;
+            background-color: blue;
+        }
+
+        div:hover {
+            width: 100px;
+            height: 200px;
+            background-color: azure;
+            animation-name: example;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-delay: 2s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+        }
+        @keyframes example {
+            from{ background-color:blueviolet;}
+
+            to{background-color:chocolate;}
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>

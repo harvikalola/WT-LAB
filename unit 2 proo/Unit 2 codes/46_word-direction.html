@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .box {
+      width: 150px;
+      height: 120px;
+      border: 2px solid black;
+      margin: 10px;
+      padding: 5px;
+      font-size: 16px;
+    }
+
+    /* Default (horizontal-tb) */
+    .horizontal-tb {
+      writing-mode: horizontal-tb;
+      background-color: #fce4ec;
+    }
+
+    /* Vertical right-to-left */n
+    .vertical-rl {
+      writing-mode: vertical-rl;
+      background-color: #e3f2fd;
+    }
+
+    /* Vertical left-to-right */
+    .vertical-lr {
+      writing-mode: vertical-lr;
+      background-color: #e8f5e9;
+    }
+  </style>
+</head>
+<body>
+  <h3>writing-mode Example</h3>
+
+  <div class="box horizontal-tb">
+    Horizontal-tb (default)<br>
+    Text flows left → right, <br>
+    next line goes top → bottom.
+  </div>
+
+  <div class="box vertical-rl">
+    Vertical-rl<br>
+    Text flows top → bottom,<br>
+    blocks go right → left.
+  </div>
+
+  <div class="box vertical-lr">
+    Vertical-lr<br>
+    Text flows top → bottom,<br>
+    blocks go left → right.
+  </div>
+</body>
+</html>
+    

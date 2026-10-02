@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Global Variable */
+        :root {
+            --color: blue;
+        }
+
+        h1 {
+            color: var(--color);
+        }
+
+        /* Local Variable */
+        .box {
+            --color: red;
+
+            color: var(--color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Hello</h1>
+
+    <div class="box">
+        This is Box
+    </div>
+
+</body>
+</html>
