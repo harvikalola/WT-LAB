@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Website - Product Layout</title>
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body { background: #f8f9fa; font-family: Arial, sans-serif; color: #212529; }
+.site-header { background: #fff; border: 1px solid #dee2e6; }
+.logo-box { min-height: 82px; display: flex; align-items: center; justify-content: center; background: #d1f5d3; font-weight: 700; }
+.navbar-box { min-height: 82px; background: #fff0bf; display: flex; align-items: center; }
+.navbar-box .nav-link { color: #333; font-size: 14px; padding: .5rem .7rem; }
+.sidebar { background: #f0dcff; min-height: 390px; padding: 16px 12px; }
+.sidebar .nav-link { color: #333; border-radius: 4px; padding: 9px 10px; font-size: 14px; }
+.sidebar .nav-link.active { background: #0d6efd; color: white; }
+.content-area { background: #d9f8f3; padding: 14px; min-height: 390px; }
+.section-heading { background: #b9d8f5; padding: 9px; text-align: center; font-weight: 700; margin-bottom: 12px; }
+.product-card { background: white; border: 1px solid #d9c5ff; border-radius: 3px; height: 100%; padding: 10px; text-align: center; }
+.product-card img { width: 100%; height: 125px; object-fit: contain; margin-bottom: 8px; }
+.product-name { font-weight: 600; margin-bottom: 4px; font-size: 14px; }
+.price { font-size: 14px; margin-bottom: 10px; }
+.pagination-wrap { background: #ffdce1; padding: 12px; margin-top: 12px; }
+.site-footer { background: #e7d5f7; text-align: center; padding: 18px 10px; }
+.copyright { font-size: 12px; color: #555; margin-top: 7px; } @media (max-width: 767.98px) {
+.logo-box { min-height: 65px; }
+.navbar-box { min-height: auto; padding: 8px; }
+.sidebar { min-height: auto; }
+.content-area { min-height: auto; }
+.product-card img { height: 110px; }
+}
+</style>
+</head>
+<body>
+<div class="container-fluid p-3">
+<!-- Row 1: Header -->
+<header class="site-header row g-1 p-1 mb-2">
+<div class="col-md-3">
+<div class="logo-box flex-column">
+<div>LOGO</div>
+<small class="fw-normal">My Website</small>
+</div>
+</div>
+<div class="col-md-9">
+<nav class="navbar-box navbar navbar-expand-lg justify-content-end px-3">
+<button class="navbar-toggler mb-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse justify-content-end" id="mainNav">
+<ul class="navbar-nav">
+<li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+<li class="nav-item"><a class="nav-link" href="#">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+</ul>
+</div>
+</nav>
+</div>
+</header>
+<div class="row g-2 mb-2">
+<aside class="col-md-3">
+<nav class="sidebar rounded-1">
+<h6 class="text-center fw-bold mb-3">Menu</h6>
+<ul class="nav nav-pills flex-column">
+<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Electronics</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Clothing</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Books</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Home andKitchen</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Sports</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Toys</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Offers</a></li>
+</ul>
+</nav>
+</aside>
+
+<main class="col-md-9">
+<div class="content-area rounded-1">
+<div class="section-heading">Product Cards Section</div>
+<div class="row g-2">
+<div class="col-6 col-lg-3">
+<article class="product-card">
+<img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=80" alt="Laptop">
+<div class="product-name">Laptop</div>
+<div class="price">₹45,990</div>
+<button class="btn btn-primary btn-sm w-100">Add to Cart</button>
+</article>
+</div>
+<div class="col-6 col-lg-3">
+<article class="product-card">
+<img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=500&q=80" alt="Smartphone">
+<div class="product-name">Smartphone</div>
+<div class="price">₹79,999</div>
+<button class="btn btn-primary btn-sm w-100">Add to Cart</button>
+</article>
+</div>
+<div class="col-6 col-lg-3">
+<article class="product-card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=500&q=80" alt="Sports shoes">
+<div class="product-name">Sports Shoes</div>
+<div class="price">₹3,499</div>
+<button class="btn btn-primary btn-sm w-100">Add to Cart</button>
+</article>
+</div>
+<div class="col-6 col-lg-3">
+<article class="product-card">
+<img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Smart watch">
+<div class="product-name">Smart Watch</div>
+<div class="price">₹8,999</div>
+<button class="btn btn-primary btn-sm w-100">Add to Cart</button>
+</article>
+</div>
+</div>
+<nav class="pagination-wrap rounded-1" aria-label="Product pages">
+<ul class="pagination pagination-sm justify-content-center mb-0">
+<li class="page-item"><a class="page-link" href="#" aria-label="Previous">‹</a></li>
+<li class="page-item active"><a class="page-link" href="#">1</a></li>
+<li class="page-item"><a class="page-link" href="#">2</a></li>
+<li class="page-item"><a class="page-link" href="#">3</a></li>
+<li class="page-item"><a class="page-link" href="#">4</a></li>
+<li class="page-item"><a class="page-link" href="#">5</a></li>
+<li class="page-item"><a class="page-link" href="#" aria-label="Next">›</a></li>
+</ul>
+</nav>
+</div>
+</main>
+</div>
+ 
+
+ 
+
+<!-- Row 3: Footer -->
+<footer class="site-footer rounded-1">
+<div class="fw-bold">My Website</div>
+<div class="copyright">© 2026 My Website. All Rights Reserved.</div>
+</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></scri pt>
+</body>
+</html>
+

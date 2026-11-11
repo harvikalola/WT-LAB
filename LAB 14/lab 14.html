@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Application</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightgray;
+            text-align: center;
+        }
+
+        .quiz {
+            background-color: white;
+            width: 350px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="quiz">
+        <h2>Quiz Application</h2>
+
+        <h3 id="question"></h3>
+
+        <div id="options"></div>
+
+        <p id="result"></p>
+
+        <button id="next" onclick="nextQuestion()" style="display:none;">
+            Next Question
+        </button>
+    </div>
+
+    <script>
+        // Store quiz questions and answers
+        const questions = [
+            {
+                question: "1. What is the capital of India?",
+                options: ["Mumbai", "Delhi", "Chennai", "Kolkata"],
+                answer: "Delhi"
+            },
+            {
+                question: "2. Which language is used for web pages?",
+                options: ["HTML", "C", "Java", "Python"],
+                answer: "HTML"
+            },
+            {
+                question: "3. What is 5 + 5?",
+                options: ["8", "9", "10", "11"],
+                answer: "10"
+            },
+            {
+                question: "4. Which tag is used for a paragraph in HTML?",
+                options: ["&lt;head&gt;", "&lt;h1&gt;", "&lt;p&gt;", "&lt;title&gt;"],
+                answer: "&lt;p&gt;"
+            },
+            {
+                question: "5. Which language adds interactivity to web pages?",
+                options: ["HTML", "CSS", "JavaScript", "SQL"],
+                answer: "JavaScript"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        // Display the current question
+        function showQuestion() {
+            document.getElementById("result").innerHTML = "";
+
+            let q = questions[currentQuestion];
+
+            document.getElementById("question").innerHTML = q.question;
+
+            let output = "";
+
+            q.options.forEach(function(option) {
+                output += `<button onclick="checkAnswer(this)">${option}</button>`;
+            });
+
+            document.getElementById("options").innerHTML = output;
+        }
+
+        // Check the selected answer
+        function checkAnswer(button) {
+            let q = questions[currentQuestion];
+
+            if (button.innerHTML === q.answer) {
+                score++;
+                document.getElementById("result").innerHTML = "Correct Answer!";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "Wrong Answer! Correct answer: " + q.answer;
+            }
+
+            // Disable all options after answering
+            let buttons = document.querySelectorAll("#options button");
+
+            buttons.forEach(function(btn) {
+                btn.disabled = true;
+            });
+
+            document.getElementById("next").style.display = "block";
+        }
+
+        // Move to the next question
+        function nextQuestion() {
+            currentQuestion++;
+
+            if (currentQuestion < questions.length) {
+                showQuestion();
+                document.getElementById("next").style.display = "none";
+            } else {
+                showResult();
+            }
+        }
+
+        // Display the final score
+        function showResult() {
+            document.querySelector(".quiz").innerHTML =
+                "<h2>Quiz Completed!</h2>" +
+                "<h3>Your Score: " + score + " / " + questions.length + "</h3>" +
+                "<p>Percentage: " +
+                Math.round((score / questions.length) * 100) + "%</p>" +
+                "<button onclick='location.reload()'>Restart Quiz</button>";
+        }
+
+        // Start the quiz
+        showQuestion();
+    </script>
+
+</body>
+</html>
